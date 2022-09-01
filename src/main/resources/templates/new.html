@@ -15,13 +15,16 @@
 
       <label for="lastName">Фамилия</label>
       <input type="text" th:field="*{lastname}" id="lastName" placeholder="Last Name">
-      <label for="lastName">Город</label>
+      <label for="City">Город</label>
       <input type="text" th:field="*{city}" id="City" placeholder="City">
-      <label for="lastName">Возраст</label>
+      <label for="Age">Возраст</label>
       <input type="text" th:field="*{age}" id="Age" placeholder="Age">
+      <label for="Password">Пароль</label>
+      <input type="text" th:field="*{password}" id="password" placeholder="password">
       <input class="btn btn-primary" type="submit" value="Добавить пользователя">
     </div>
   </div>
 </form>
+<p><a class="btn btn-primary" href="/logout">Выйти из системы</a></p>
 </body>
 </html>

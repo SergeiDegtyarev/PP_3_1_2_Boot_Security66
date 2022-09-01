@@ -26,28 +26,28 @@ public class AdminController {
         model.addAttribute("user", new User());
         return "/new";
     }
-    @PostMapping("admin/new")
+    @PostMapping("/new")
     public String creatUser(@ModelAttribute("user") User user) {
         userService.addUser(user);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 
-    @GetMapping("admin/update/{id}")
+    @GetMapping("/admin/update/{id}")
     public String updateUser(Model model, @PathVariable("id") int id) {
         model.addAttribute("user", userService.findById(id));
         return "/update";
     }
 
-    @PatchMapping("/admin/update/{id}")
+    @PatchMapping("/update/{id}")
     public String patchUser(@ModelAttribute("user") User user) {
         userService.updateUser(user);
-        return "redirect:/";
+        return "redirect:/admin";
 
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public String deleteUser(@PathVariable("id") int id) {
         userService.deleteUser(id);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 }

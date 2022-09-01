@@ -11,17 +11,20 @@
   <div class="table table-dark" >
     <div class="col">
       <label for="name">Имя</label>
-      <input type="text" th:field="*{name}" id="name" placeholder="Name">
+      <input type="text" th:field="*{name}" id="name" placeholder="Name">2
 
       <label for="lastName">Фамилия</label>
       <input type="text" th:field="*{lastname}" id="lastName" placeholder="Last Name">
-      <label for="lastName">Город</label>
+      <label for="City">Город</label>
       <input type="text" th:field="*{city}" id="City" placeholder="City">
-      <label for="lastName">Возраст</label>
+      <label for="Age">Возраст</label>
       <input type="text" th:field="*{age}" id="Age" placeholder="Age">
+      <label for="Password">Пароль</label>
+      <input type="text" th:field="*{password}" id="password" placeholder="Password">
       <input class="btn btn-primary" type="submit" value="Обновить данные">
     </div>
   </div>
 </form>
+<p><a class="btn btn-primary" href="/logout">Выйти из системы</a></p>
 </body>
 </html>

@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User findUserName(String name) {
         return userDao.findUserName(name);
     }
