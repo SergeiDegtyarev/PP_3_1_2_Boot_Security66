@@ -18,7 +18,6 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-
     private PasswordEncoder passwordEncoder;
     @Autowired
     @Lazy
@@ -54,7 +53,6 @@ public class UserDaoImpl implements UserDao {
         q.setParameter("name",name);
         return q.getResultList().stream().findFirst().orElse(null);
     }
-
 
     public List<User> getAllUsers() {
         return  entityManager.createQuery("from User",User.class).getResultList();
