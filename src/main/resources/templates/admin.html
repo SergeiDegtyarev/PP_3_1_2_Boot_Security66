@@ -19,6 +19,7 @@
                 <th>Город</th>
                 <th>Возраст</th>
                 <th>Пароль</th>
+                <th>Роль</th>
             </tr>
             </thead>
             <tr th:each="user : ${allusers}">
@@ -28,6 +29,7 @@
                 <td th:text="${user.getCity()}"></td>
                 <td th:text="${user.getAge()}"></td>
                 <td th:text="${user.getPassword()}"></td>
+                <td th:utext="${user.getRoles()}"></td>
                 <td><a class="btn btn-primary"  th:href="@{/admin/update/{id}(id=${user.getId()})}" th:object="${user}">Изменить</a></td>
                 <td><form class="btn btn-primary" th:method="DELETE" th:action="@{admin/{id}(id=${user.getId()})}">
                     <input type="submit" class="btn btn-primary" value="Удалить"/>

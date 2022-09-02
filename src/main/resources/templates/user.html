@@ -16,6 +16,7 @@
         <th>Город</th>
         <th>Возраст</th>
         <th>Пароль</th>
+        <th>Роль</th>
     </tr>
     <td th:utext="${user.getId()}">User_id</td>
     <td th:utext="${user.getName()}">Name</td>
@@ -23,6 +24,7 @@
     <td th:utext="${user.getAge()}">Age</td>
     <td th:utext="${user.getCity()}">City</td>
     <td th:utext="${user.getPassword()}">Password</td>
+    <td th:utext="${user.getRoles()}">role</td>
 </table>
 </div>
 <br>

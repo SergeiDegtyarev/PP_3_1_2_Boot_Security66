@@ -7,6 +7,7 @@ import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.service.UserService;
 
 @Controller
+@RequestMapping (value = "/admin")
 public class AdminController {
     private final UserService userService;
 
@@ -14,25 +15,25 @@ public class AdminController {
         this.userService = userService;
     }
 
-    @GetMapping("/admin")
+    @GetMapping()
     public String showUser(Model model) {
         model.addAttribute("allusers", userService.getAllUsers());
         return "/admin";
 
     }
 
-    @GetMapping("admin/new")
+    @GetMapping("/new")
     public String newUser2(Model model) {
         model.addAttribute("user", new User());
         return "/new";
     }
-    @PostMapping("/new")
+    @PostMapping("admin/new")
     public String creatUser(@ModelAttribute("user") User user) {
         userService.addUser(user);
         return "redirect:/admin";
     }
 
-    @GetMapping("/admin/update/{id}")
+    @GetMapping("/update/{id}")
     public String updateUser(Model model, @PathVariable("id") int id) {
         model.addAttribute("user", userService.findById(id));
         return "/update";
@@ -45,7 +46,7 @@ public class AdminController {
 
     }
 
-    @DeleteMapping("/admin/{id}")
+    @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable("id") int id) {
         userService.deleteUser(id);
         return "redirect:/admin";

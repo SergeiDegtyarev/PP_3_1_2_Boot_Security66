@@ -18,11 +18,8 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final SuccessUserHandler successUserHandler;
-
     private  MyUserDetailsService myUserDetailsService;
 
-
-    @Autowired
     public WebSecurityConfig(SuccessUserHandler successUserHandler, MyUserDetailsService myUserDetailsService, DataSource dataSource) {
         this.successUserHandler = successUserHandler;
         this.myUserDetailsService = myUserDetailsService;

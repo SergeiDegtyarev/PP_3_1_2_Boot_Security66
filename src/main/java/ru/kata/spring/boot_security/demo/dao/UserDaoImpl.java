@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 @Repository
@@ -19,15 +20,17 @@ public class UserDaoImpl implements UserDao {
     private EntityManager entityManager;
 
     private PasswordEncoder passwordEncoder;
-    @Autowired
+
     @Lazy
     public UserDaoImpl(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
+
     }
 
-
+      private RoleDao roleDao;
     public void addUser(User user) {
         user.setRoles(Collections.singleton(new Role(2, "ROLE_USER")));
+//        user.setRoles(new HashSet<>(roleDao.findById()));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         entityManager.persist(user);
     }

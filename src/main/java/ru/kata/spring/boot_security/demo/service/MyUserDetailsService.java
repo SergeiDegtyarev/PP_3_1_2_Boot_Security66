@@ -12,7 +12,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     private final UserServiceImpl userService;
 
-    @Autowired
+
     public MyUserDetailsService(UserServiceImpl userService) {
         this.userService = userService;
     }
@@ -25,7 +25,6 @@ public class MyUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("user not found");
         }
 
-         return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(),
-                user.getAuthorities());
+         return user;
     }
 }
