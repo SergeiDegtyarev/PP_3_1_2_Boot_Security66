@@ -22,12 +22,6 @@ public class AdminController {
         this.roleService = roleService;
     }
 
-//    @GetMapping()
-//    public String user(@ModelAttribute("user1") User user) {
-//
-//        return "admin";
-//
-//    }
 
     @GetMapping()
     public String showUser(Model model, @AuthenticationPrincipal User user) {
