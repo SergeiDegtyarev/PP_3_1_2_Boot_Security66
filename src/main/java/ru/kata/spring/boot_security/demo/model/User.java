@@ -18,7 +18,7 @@ public class User implements UserDetails {
     private Integer id;
     private String name;
     private String lastname;
-    private String city;
+    private String email;
     private int age;
     private String password;
 
@@ -31,10 +31,10 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String name, String lastname, String city, int age, String password, Set<Role> roles) {
+    public User(String name, String lastname, String email, int age, String password, Set<Role> roles) {
         this.name = name;
         this.lastname = lastname;
-        this.city = city;
+        this.email = email;
         this.age = age;
         this.password = password;
         this.roles = roles;
@@ -118,12 +118,12 @@ public class User implements UserDetails {
         this.lastname = lastname;
     }
 
-    public String getCity() {
-        return city;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public int getAge() {
         return age;
@@ -139,7 +139,7 @@ public class User implements UserDetails {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", city='" + city + '\'' +
+                ", email='" + email + '\'' +
                 ", age=" + age +
                 '}';
     }

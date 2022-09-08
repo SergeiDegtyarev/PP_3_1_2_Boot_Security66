@@ -29,8 +29,6 @@ public class UserDaoImpl implements UserDao {
 
       private RoleDao roleDao;
     public void addUser(User user) {
-        user.setRoles(Collections.singleton(new Role(2, "ROLE_USER")));
-//        user.setRoles(new HashSet<>(roleDao.findById()));
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         entityManager.persist(user);
     }
