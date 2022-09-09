@@ -101,7 +101,7 @@
                                         <div class="modal fade" th:id="${'edituser'+user.getId()}" tabindex="-1"
                                              role="dialog"
                                              aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <form th:action="@{admin/{id}(id=${user.getId()})}" th:object="${user}" method="POST">
+                                            <form th:action="@{admin/{id}(id=${user.getId()})}" th:object="${user}" method="Post">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -153,7 +153,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="password1" class="col-form-label"><b>Password:</b></label>
-                                                                <input type="text" class="form-control"
+                                                                <input type="password" class="form-control"
                                                                        id="password1"
                                                                        th:value="${user.getPassword()}"
                                                                        th:name="password">
