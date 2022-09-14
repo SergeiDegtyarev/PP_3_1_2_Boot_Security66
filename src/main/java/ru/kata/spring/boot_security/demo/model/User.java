@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -16,10 +17,15 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String name;
+
     private String lastname;
+
     private String email;
+
     private int age;
+
     private String password;
 
     @ManyToMany

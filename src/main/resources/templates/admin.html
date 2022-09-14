@@ -101,7 +101,7 @@
                                         <div class="modal fade" th:id="${'edituser'+user.getId()}" tabindex="-1"
                                              role="dialog"
                                              aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <form th:action="@{admin/{id}(id=${user.getId()})}" th:object="${user}" method="Post">
+                                            <form th:action="@{admin/{id}(id=${user.getId()})}" th:object="${user}" th:method="PUT">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -172,7 +172,7 @@
                                                             <button type="button" class="btn btn-secondary"
                                                                     data-dismiss="modal">Close
                                                             </button>
-                                                            <button type="submit" class="btn btn-primary">Edit
+                                                            <button type="submit"  class="btn btn-primary">Edit
                                                             </button>
                                                         </div>
                                                     </div>
